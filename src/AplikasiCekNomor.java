@@ -54,18 +54,9 @@ public class AplikasiCekNomor extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
-        jPanel1.setLayout(new java.awt.GridBagLayout());
-
         jLabel1.setText("Masukkan Angka");
-        jPanel1.add(jLabel1, new java.awt.GridBagConstraints());
 
         jLabel3.setText("Hasil");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.weighty = 0.7;
-        jPanel1.add(jLabel3, gridBagConstraints);
 
         ProsesButton.setText("Proses");
         ProsesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -73,10 +64,6 @@ public class AplikasiCekNomor extends javax.swing.JFrame {
                 ProsesButtonActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        jPanel1.add(ProsesButton, gridBagConstraints);
 
         HapusButton.setText("Hapus");
         HapusButton.addActionListener(new java.awt.event.ActionListener() {
@@ -84,29 +71,12 @@ public class AplikasiCekNomor extends javax.swing.JFrame {
                 HapusButtonActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
-        jPanel1.add(HapusButton, gridBagConstraints);
 
         INputTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 INputTextFieldActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel1.add(INputTextField, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weighty = 0.7;
-        jPanel1.add(OutputTextField, gridBagConstraints);
 
         KeluarButton.setText("Keluar");
         KeluarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -114,10 +84,48 @@ public class AplikasiCekNomor extends javax.swing.JFrame {
                 KeluarButtonActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        jPanel1.add(KeluarButton, gridBagConstraints);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(172, 172, 172)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(41, 41, 41)
+                        .addComponent(OutputTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(ProsesButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(HapusButton)
+                        .addGap(31, 31, 31)
+                        .addComponent(KeluarButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(28, 28, 28)
+                        .addComponent(INputTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(INputTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(HapusButton)
+                        .addComponent(ProsesButton))
+                    .addComponent(KeluarButton))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(OutputTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(143, 143, 143))
+        );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -128,6 +136,7 @@ public class AplikasiCekNomor extends javax.swing.JFrame {
         // TODO add your handling code here:
         INputTextField.setText("");
         OutputTextField.setText("");
+        INputTextField.requestFocus();
         
     }//GEN-LAST:event_HapusButtonActionPerformed
 
@@ -141,21 +150,23 @@ public class AplikasiCekNomor extends javax.swing.JFrame {
         int input;
         try {
             input=Integer.parseInt(INputTextField.getText());
+            String  output = input + " adalah Angka ";
         
             if (input%2==1) {
-                JOptionPane.showMessageDialog(null,input+" adalah angka ganjil");
-                OutputTextField.setText(input+" adalah angka ganjil");
+                output += "ganjil";
             }else{
-                OutputTextField.setText(input+" adalah angka genap");
-                JOptionPane.showMessageDialog(null,input+" adalah angka genap");
+                output += "genap";
             }
                 
          if (iniPrimal(input)) {
-                 OutputTextField.setText(OutputTextField.getText()+" dan ini bilangan primal");
+                 output+=" dan bilangan Prima";
                 
             } else{
-                 OutputTextField.setText(OutputTextField.getText()+" dan ini bukan bilangan primal");
+                  output+=" dan bilangan bukan Prima";
              }
+         
+         JOptionPane.showMessageDialog(null, output);
+         OutputTextField.setText(output);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Silahkan Masukkan Angka");
         }
